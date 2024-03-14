@@ -19,19 +19,19 @@ function WeatherApp() {
   };
 
   return (
-    <div className="h-[100vh] bg-green-100 flex items-center justify-center  flex-col ">
-      <h1 className="text-4xl mb-4 font-bold font-serif">
+    <div className="h-[100vh] bg-green-100 flex items-center justify-center  flex-col  mobile:p-8 sm:p-0">
+      <h1 className="mobile:text-2xl sm:text-4xl mb-4 font-bold font-serif">
         Weather application
       </h1>
 
-      <div className=" bg-green-300 text-black flex flex-col items-center justify-center p-10 rounded-lg ">
+      <div className="bg-green-300 text-black flex flex-col items-center justify-center p-10 rounded-lg mobile:p-4 sm:w-auto">
         <div className="flex h-[60px] justify-center items-center">
           <input
             value={name}
             onChange={(e) => {
               setName(e.target.value);
             }}
-            className=" px-5 text-xl placeholder:text-lg h-full w-[100%] text-black bg-white text-center placeholder:text-center rounded-lg rounded-r-none  font-serif"
+            className="px-5 text-xl placeholder:text-lg h-full w-[100%] text-black bg-white text-center placeholder:text-center rounded-lg rounded-r-none  font-serif"
             type="text"
             placeholder="Enter City name"
           />
@@ -47,10 +47,10 @@ function WeatherApp() {
 
         {data && data.wind && (
           <div className="flex items-center justify-center flex-col gap-5">
-            <h1 className="text-black text-3xl text-center mt-6 font-serif font-bold ">
+            <h1 className="text-black mobile:text-xl sm:text-3xl text-center mt-6 font-serif font-bold ">
               {data.name} ,<span>{data.sys.country}</span>
             </h1>
-            <h1 className="text-black text-4xl text-center font-bold font-serif">
+            <h1 className="text-black mobile:text-lg lg:text-4xl text-center font-bold font-serif">
               {(data.main.temp - 273).toFixed(1)}°
             </h1>
             <h1 className="text-black text-2xl text-center font-serif">
